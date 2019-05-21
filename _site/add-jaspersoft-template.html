@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cronica Documentation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://localhost:4000/assets/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="wrapper">
+
+<header class="page-header">
+            <h1 class="site-title">
+
+                Cronica Documentation
+
+            </h1>
+            <p class="back-to-main"><a href="http://cronica.io">Back to main website</a></p>
+
+            <nav>
+
+
+<ul class="nav">
+
+    <li class="nav__item">
+
+      <a href="#001">Cronica Infrastructure with vpn</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#002">How to add A JasperSoft Template</a>
+
+</ul>
+
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#003">How to Create a Structured Document</a>
+
+
+</ul>
+
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#004">How to Create a Template with Template Constructor</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#005">How to Create Generic Document</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#006">How To Create HTML based template</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#007">How to create Quorum Network and Add New Node</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#008">How to Search for a Document on Issuer Site</a>
+
+
+</ul>
+			</nav>
+
+        </header>
+
+
+		<section class="page-content">
+			<div class="bsa-cpc"></div>
+
+	<p><strong>1.   Download and install Jaspersoft Studio 6.6.0 using the link below:</strong></p>
+
+<p><a href="https://community.jaspersoft.com/project/jaspersoft-studio/releases">https://community.jaspersoft.com/project/jaspersoft-studio/releases</a></p>
+
+<p><strong>2.   Open Jaspersoft Studio and observe the screen;</strong></p>
+
+<p><img src="img/JasperSoft1.png" alt="1" /></p>
+
+<p><strong>3.  Click on ‘File’ in</strong></p>
+
+<p><strong>4.  Click on ‘New’ in appeared dropdown menu;</strong></p>
+
+<p><strong>5.  Click on ‘Jasper Report’;</strong></p>
+
+<p><img src="img/JasperSoft2.png" alt="2" /></p>
+
+<p><strong>6.   While creating a template  use  fields, images and other components which you can drag from ‘Palette’;</strong></p>
+
+<p><img src="img/JasperSoft3.png" alt="3" /></p>
+
+<p><strong>7.  Fields can be used for dynamic information, you have to create new field and use this field as a variable for text field. To create a new field includes follow this steps:</strong></p>
+
+<p>a. Right click by mouse on element ‘Field’ in ‘Outline’ menu;</p>
+
+<p>b. Click on menu item ‘Create Field’;</p>
+
+<p><img src="img/JasperSoft4.png" alt="4" /></p>
+
+<p>c. When the field is created, input a name of field and select data type in ‘Properties’ menu;</p>
+
+<p><img src="img/JasperSoft5.png" alt="5" /></p>
+
+<p>d. Drag ‘Text Field’ from ‘Palette’ onto the template;</p>
+
+<p><img src="img/JasperSoft6.png" alt="6" /></p>
+
+<p>e. Click on ‘Text Field’ within the template;</p>
+
+<p>f.  Choose tab ‘Text Field’ in ‘Properties’ menu;</p>
+
+<p>g. Click on ‘Expression Editor’ button;</p>
+
+<p><img src="img/JasperSoft7.png" alt="7" /></p>
+
+<p>h.  Select a field ‘Field_()’ in the list of fields in ‘Expression Editor’ window;</p>
+
+<p><img src="img/JasperSoft8.png" alt="8" /></p>
+
+<p>i. Click on ‘Finish’ button to finish field link.</p>
+
+<p><strong>8. Image components also can be inserted in a template while creating a new one. To insert the image follow next steps:</strong></p>
+
+<p>a. Drag ‘Image’ item from ‘Palette’ to template in place you would like;</p>
+
+<p><img src="img/JasperSoft9.png" alt="9" /></p>
+
+<p>b. After you dragged the ‘Image’ into template, ‘Create new image element’ windows will appear. Choose option ‘No image’;</p>
+
+<p><img src="img/JasperSoft11.png" alt="11" /></p>
+
+<p>c. Create new parameter by clicking ‘Parameters’ submenu in ‘Outline’ menu and selecting ‘Create Parameter’ option;</p>
+
+<p><img src="img/JasperSoft12.png" alt="12" /></p>
+
+<p>d. Rename newly created parameter to “PATH_TO_IMAGES”;</p>
+
+<p><img src="img/JasperSoft13.png" alt="13" /></p>
+
+<p>e.  Click on dragged image and in tab “Image” click button “Expression Editor”</p>
+
+<p><img src="img/JasperSoft14.png" alt="14" /></p>
+
+<p>d. Find “PATH_TO_IMAGES” and add string to expression: .toString()+”/<name_of_image>",</name_of_image></p>
+
+<p>where <name_of_image> is an actual image name which you would like to insert in template;</name_of_image></p>
+
+<p><img src="img/JasperSoft15.png" alt="15" /></p>
+
+<p><strong>9. Different custom fonts also can be used in a template while creating a new one. To use them, follow next steps:</strong></p>
+
+<p>a.  Specify a parameter “pdfFontName” and assign a path to font to this variable which should looks like this pdfFontName=$P{PATH_TO_FONTS}.toString()+”/<font>" where <font> is an actual name of the font;</font></font></p>
+
+<p>b.  In order to use an Arabic fonts set ‘pdfEncoding’ property to ‘Identity-H’ value;</p>
+
+<p><img src="img/JasperSoft16.png" alt="16" /></p>
+
+<p>c. Set ‘pdfEmbedded’ property to ‘true’;</p>
+
+<p>d. Put custom fonts in ZIP archive in the “template/fonts/”</p>
+
+<p><strong>10. When you finish creating the template, create an archive which will contain a template with .jrxml extension and images used by the template with names you specified in a template for “image” items. All images must be located in “template/img/” folder in archive, all fonts must be located in ‘template/fonts/’ folder in archive and archive file as a .zip.</strong></p>
+
+<p><strong>11. Go to the Issuer site for Cronica.io and authorize as an Editor or Administrator</strong></p>
+
+<p><strong>12. Click ‘New Template’</strong></p>
+
+<p><img src="img/JasperSoft17.png" alt="17" /></p>
+
+<p><strong>13. Observe as new fields appear;</strong></p>
+
+<p><strong>14. Complete ‘Template Name’ with an appropriate  name;</strong></p>
+
+<p><strong>15. Upload .zip archive with a template into Attach File Field;</strong></p>
+
+<p><strong>16. Complete ‘Name’ and ‘System Name’ fields for a variables, according to number of variables used in template, counting ‘Name’ as a name of field displayed to users, when they will creating a documents, counting ‘System Name’ - as a field named in template;</strong></p>
+
+<p><strong>17. Complete all needed fields and click ‘Submit’ button.</strong></p>
+
+<p><strong>18. Observe as newly created template appears in templates list on ‘New Document’ screen</strong></p>
+
+<p><img src="img/JasperSoft18.png" alt="18" /></p>
+
+
+		</section>
+
+		<div class="clear"></div>
+		<footer class="page-footer">
+			<p class="small-text">Support: <a href="mailto:info@emmet.io">info@emmet.io</a><br>Created with <a href="https://github.com/bevry/docpad">DocPad</a> and <a href="http://gulpjs.com">Gulp.js</a><br>Minimal theme by <a href="https://github.com/orderedlist/minimal">orderedlist</a></p>
+			<p class="small-text"><a href="https://github.com/emmetio/emmet-docs/tree/master/src/documents/index.html.md">View page source on GitHub</a></p>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>

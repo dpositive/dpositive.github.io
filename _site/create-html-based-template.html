@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cronica Documentation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://localhost:4000/assets/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="wrapper">
+
+<header class="page-header">
+            <h1 class="site-title">
+
+                Cronica Documentation
+
+            </h1>
+            <p class="back-to-main"><a href="http://cronica.io">Back to main website</a></p>
+
+            <nav>
+
+
+<ul class="nav">
+
+    <li class="nav__item">
+
+      <a href="#001">Cronica Infrastructure with vpn</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#002">How to add A JasperSoft Template</a>
+
+</ul>
+
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#003">How to Create a Structured Document</a>
+
+
+</ul>
+
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#004">How to Create a Template with Template Constructor</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#005">How to Create Generic Document</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#006">How To Create HTML based template</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#007">How to create Quorum Network and Add New Node</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#008">How to Search for a Document on Issuer Site</a>
+
+
+</ul>
+			</nav>
+
+        </header>
+
+
+		<section class="page-content">
+			<div class="bsa-cpc"></div>
+
+	<h1 id="how-to-add-html-template-to-cronicaio">How to add HTML Template to Cronica.io</h1>
+
+<p>Step-by-step guide</p>
+
+<p><strong>1.   Create html document with any suitable for you html editor, adding images, styles and tables.</strong></p>
+
+<p><strong>2.  Put all used images into “../template/img” folder</strong></p>
+
+<p><img src="img/HTML1.jpg" alt="Generic template" /></p>
+
+<ol>
+  <li>Open .html document to make next changes with code:</li>
+</ol>
+
+<p><strong>Change file location for images to just file name:</strong>
+Before:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"./template/img/cronica.png"</span> <span class="na">alt=</span><span class="s">"Cronica"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>After:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"cronica.png"</span> <span class="na">alt=</span><span class="s">"Cronica"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>**Insert variables to any place of html within    &lt;p&gt;, <span>, &lt;div&gt; tags by adding  ###variable_name###:**</span></p>
+
+<p>Before:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"text-align: center;"</span><span class="nt">&gt;</span>Declaration of Mr.Smith<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p>After:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"text-align: center;"</span><span class="nt">&gt;</span>Declaration of ###name###<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+<p><strong>Insert “data-tablename” parameter with the table name to table tags:</strong></p>
+
+<p>Before:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">style=</span><span class="s">"height: 17px; margin-left: auto; margin-right: auto;"</span> <span class="na">width=</span><span class="s">"631"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>After:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">data-tablename=</span><span class="s">"new_table"</span> <span class="na">style=</span><span class="s">"height: 17px; margin-left: auto; margin-right: auto;"</span> <span class="na">width=</span><span class="s">"631"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Add name for the columns within &lt;td&gt; tags:</strong></p>
+
+<p>Before:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="err">&lt;</span><span class="na">td</span> <span class="na">style=</span><span class="s">"width: 88px;"</span><span class="nt">&gt;&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">style=</span><span class="s">"width: 88px;"</span><span class="nt">&gt;&lt;/td&gt;</span>
+</code></pre></div></div>
+
+<p>After:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;td</span> <span class="na">style=</span><span class="s">"width: 88px;"</span><span class="nt">&gt;</span>id<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">style=</span><span class="s">"width: 88px;"</span><span class="nt">&gt;</span>Sum<span class="nt">&lt;/td&gt;</span>
+</code></pre></div></div>
+
+<p><strong>4. Save .html file</strong></p>
+
+<p><strong>5. Compress .html file and “template” folder to single .zip archive</strong></p>
+
+<p><strong>6. Go to the Issuer site of Cronica.io and authorize as an Editor or Administrator</strong></p>
+
+<p><strong>7. Go to the New Template</strong></p>
+
+<p><strong>8. Input Template Name</strong></p>
+
+<p><strong>9. Click on HTML button</strong></p>
+
+<p><img src="img/HTML2.jpg" alt="2" /></p>
+
+<p><strong>10. Click on ‘Submit’ button</strong></p>
+
+<p><strong>11. Observe block with variable and table name(s)</strong></p>
+
+<p><img src="img/HTML3.png" alt="3" /></p>
+
+<p><strong>11. Complete Variable Name fields (f.e. “Client ID”)</strong></p>
+
+<p><strong>12. Complete Table Name fields (f.e. “Financial Table”)</strong></p>
+
+<p><strong>13. If your template has more than one table, complete Table Name field for each table</strong></p>
+
+<p><strong>14. Check all the fields are correctly completed and click on Submit to submit new template</strong></p>
+
+<p><strong>15. Observe newly added template in documents list in New Document menu</strong></p>
+
+<p><img src="img/HTML4.png" alt="3" /></p>
+
+
+		</section>
+
+		<div class="clear"></div>
+		<footer class="page-footer">
+			<p class="small-text">Support: <a href="mailto:info@emmet.io">info@emmet.io</a><br>Created with <a href="https://github.com/bevry/docpad">DocPad</a> and <a href="http://gulpjs.com">Gulp.js</a><br>Minimal theme by <a href="https://github.com/orderedlist/minimal">orderedlist</a></p>
+			<p class="small-text"><a href="https://github.com/emmetio/emmet-docs/tree/master/src/documents/index.html.md">View page source on GitHub</a></p>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cronica Documentation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://localhost:4000/assets/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="wrapper">
+
+<header class="page-header">
+            <h1 class="site-title">
+
+                Cronica Documentation
+
+            </h1>
+            <p class="back-to-main"><a href="http://cronica.io">Back to main website</a></p>
+
+            <nav>
+
+
+<ul class="nav">
+
+    <li class="nav__item">
+
+      <a href="#001">Cronica Infrastructure with vpn</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#002">How to add A JasperSoft Template</a>
+
+</ul>
+
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#003">How to Create a Structured Document</a>
+
+
+</ul>
+
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#004">How to Create a Template with Template Constructor</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#005">How to Create Generic Document</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#006">How To Create HTML based template</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#007">How to create Quorum Network and Add New Node</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#008">How to Search for a Document on Issuer Site</a>
+
+
+</ul>
+			</nav>
+
+        </header>
+
+
+		<section class="page-content">
+			<div class="bsa-cpc"></div>
+
+	
+
+
+<div class="blog-post">
+            <h1 class="blog-post-title"><a href="/cronica-infrastructure" id="">Cronica Infrastructure with vpn</a></h1>
+            <p><strong>1.   Cronica Infrastructure with vpn:</strong></p>
+
+<p><img src="img/Cronica_Infrastructure_with_vpn.png" alt="1" /></p>
+
+          </div>
+
+
+
+
+<div class="blog-post">
+            <h1 class="blog-post-title"><a href="/add-jaspersoft-template" id="">How to add A JasperSoft Template</a></h1>
+            <p><strong>1.   Download and install Jaspersoft Studio 6.6.0 using the link below:</strong></p>
+
+<p><a href="https://community.jaspersoft.com/project/jaspersoft-studio/releases">https://community.jaspersoft.com/project/jaspersoft-studio/releases</a></p>
+
+<p><strong>2.   Open Jaspersoft Studio and observe the screen;</strong></p>
+
+<p><img src="img/JasperSoft1.png" alt="1" /></p>
+
+<p><strong>3.  Click on ‘File’ in</strong></p>
+
+<p><strong>4.  Click on ‘New’ in appeared dropdown menu;</strong></p>
+
+<p><strong>5.  Click on ‘Jasper Report’;</strong></p>
+
+<p><img src="img/JasperSoft2.png" alt="2" /></p>
+
+<p><strong>6.   While creating a template  use  fields, images and other components which you can drag from ‘Palette’;</strong></p>
+
+<p><img src="img/JasperSoft3.png" alt="3" /></p>
+
+<p><strong>7.  Fields can be used for dynamic information, you have to create new field and use this field as a variable for text field. To create a new field includes follow this steps:</strong></p>
+
+<p>a. Right click by mouse on element ‘Field’ in ‘Outline’ menu;</p>
+
+<p>b. Click on menu item ‘Create Field’;</p>
+
+<p><img src="img/JasperSoft4.png" alt="4" /></p>
+
+<p>c. When the field is created, input a name of field and select data type in ‘Properties’ menu;</p>
+
+<p><img src="img/JasperSoft5.png" alt="5" /></p>
+
+<p>d. Drag ‘Text Field’ from ‘Palette’ onto the template;</p>
+
+<p><img src="img/JasperSoft6.png" alt="6" /></p>
+
+<p>e. Click on ‘Text Field’ within the template;</p>
+
+<p>f.  Choose tab ‘Text Field’ in ‘Properties’ menu;</p>
+
+<p>g. Click on ‘Expression Editor’ button;</p>
+
+<p><img src="img/JasperSoft7.png" alt="7" /></p>
+
+<p>h.  Select a field ‘Field_()’ in the list of fields in ‘Expression Editor’ window;</p>
+
+<p><img src="img/JasperSoft8.png" alt="8" /></p>
+
+<p>i. Click on ‘Finish’ button to finish field link.</p>
+
+<p><strong>8. Image components also can be inserted in a template while creating a new one. To insert the image follow next steps:</strong></p>
+
+<p>a. Drag ‘Image’ item from ‘Palette’ to template in place you would like;</p>
+
+<p><img src="img/JasperSoft9.png" alt="9" /></p>
+
+<p>b. After you dragged the ‘Image’ into template, ‘Create new image element’ windows will appear. Choose option ‘No image’;</p>
+
+<p><img src="img/JasperSoft11.png" alt="11" /></p>
+
+<p>c. Create new parameter by clicking ‘Parameters’ submenu in ‘Outline’ menu and selecting ‘Create Parameter’ option;</p>
+
+<p><img src="img/JasperSoft12.png" alt="12" /></p>
+
+<p>d. Rename newly created parameter to “PATH_TO_IMAGES”;</p>
+
+<p><img src="img/JasperSoft13.png" alt="13" /></p>
+
+<p>e.  Click on dragged image and in tab “Image” click button “Expression Editor”</p>
+
+<p><img src="img/JasperSoft14.png" alt="14" /></p>
+
+<p>d. Find “PATH_TO_IMAGES” and add string to expression: .toString()+”/<name_of_image>",</name_of_image></p>
+
+<p>where <name_of_image> is an actual image name which you would like to insert in template;</name_of_image></p>
+
+<p><img src="img/JasperSoft15.png" alt="15" /></p>
+
+<p><strong>9. Different custom fonts also can be used in a template while creating a new one. To use them, follow next steps:</strong></p>
+
+<p>a.  Specify a parameter “pdfFontName” and assign a path to font to this variable which should looks like this pdfFontName=$P{PATH_TO_FONTS}.toString()+”/<font>" where <font> is an actual name of the font;</font></font></p>
+
+<p>b.  In order to use an Arabic fonts set ‘pdfEncoding’ property to ‘Identity-H’ value;</p>
+
+<p><img src="img/JasperSoft16.png" alt="16" /></p>
+
+<p>c. Set ‘pdfEmbedded’ property to ‘true’;</p>
+
+<p>d. Put custom fonts in ZIP archive in the “template/fonts/”</p>
+
+<p><strong>10. When you finish creating the template, create an archive which will contain a template with .jrxml extension and images used by the template with names you specified in a template for “image” items. All images must be located in “template/img/” folder in archive, all fonts must be located in ‘template/fonts/’ folder in archive and archive file as a .zip.</strong></p>
+
+<p><strong>11. Go to the Issuer site for Cronica.io and authorize as an Editor or Administrator</strong></p>
+
+<p><strong>12. Click ‘New Template’</strong></p>
+
+<p><img src="img/JasperSoft17.png" alt="17" /></p>
+
+<p><strong>13. Observe as new fields appear;</strong></p>
+
+<p><strong>14. Complete ‘Template Name’ with an appropriate  name;</strong></p>
+
+<p><strong>15. Upload .zip archive with a template into Attach File Field;</strong></p>
+
+<p><strong>16. Complete ‘Name’ and ‘System Name’ fields for a variables, according to number of variables used in template, counting ‘Name’ as a name of field displayed to users, when they will creating a documents, counting ‘System Name’ - as a field named in template;</strong></p>
+
+<p><strong>17. Complete all needed fields and click ‘Submit’ button.</strong></p>
+
+<p><strong>18. Observe as newly created template appears in templates list on ‘New Document’ screen</strong></p>
+
+<p><img src="img/JasperSoft18.png" alt="18" /></p>
+
+          </div>
+
+
+
+
+<div class="blog-post">
+            <h1 class="blog-post-title"><a href="/create-structured-doc" id="">How to Create a Structured Document</a></h1>
+            <p><strong>1. Go to the Issuer site of Cronica.io and authorize;</strong></p>
+
+<p><strong>2. Click on ‘New Document’ button on the left side menu;</strong></p>
+
+<p><strong>3. Observe list of available templates;</strong></p>
+
+<p><strong>4. Click on any structured document template (all except ‘Generic’);</strong></p>
+
+<p><img src="img/create_structured_pic01.png" alt="1" /></p>
+
+<p><strong>5. Observe document creation screen with fields for data entry;</strong></p>
+
+<p><img src="img/create_structured_pic02.png" alt="2" /></p>
+
+<p><strong>6. Input an appropriate document holder name into ‘Document Holder’ field;</strong></p>
+
+<p><strong>7. Input an appropriate expiration date into ‘Expiration date’ field if needed;</strong></p>
+
+<p><strong>8. Select the type of document availability (‘Private’, ‘Public’, ‘Limited’*);</strong></p>
+
+<ul>
+  <li>
+    <ul>
+      <li>if you click on ‘Limited’, you have to select appropriate institution from the dropdown list;</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>9. Complete fields for variables and tables’ rows;</strong></p>
+
+<p><strong>10. If you need to add a row to the table, click on ‘New Row’ button below;</strong></p>
+
+<p><img src="img/create_structured_pic03.png" alt="3" /></p>
+
+<p><strong>11. Click on ‘Submit’ button, when all the changes to the document are finished;</strong></p>
+
+<p><img src="img/create_structured_pic04.png" alt="4" /></p>
+
+<p><strong>12. Observe the screen on successful document submission;</strong></p>
+
+<p><img src="img/create_structured_pic05.png" alt="5" /></p>
+
+          </div>
+
+
+
+
+<div class="blog-post">
+            <h1 class="blog-post-title"><a href="/create-template-with-constructor" id="">How to Create a Template with Template Constructor</a></h1>
+            <p>Step-by-step guide</p>
+
+<p><strong>1. Go to the Issuer site of Cronica.io and authorize as an Editor or Administrator</strong></p>
+
+<p><strong>2. Go to the New Template</strong></p>
+
+<p><strong>3. Input Template Name</strong></p>
+
+<p><strong>4. Click on Constructor button</strong></p>
+
+<!--- ![1](img/constructor_template_pic01.png) -->
+<!--- <img src="./img/constructor_template_pic01.png" width="800">  -->
+<p><img src="img/constructor_template_pic01.png" alt="1" /></p>
+
+<p><strong>5. Compose a new template using available tools of Template Constructor</strong></p>
+
+<p><strong>6. If you need to add a table to your template, follow next few steps:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a. Click on 'Table' icon in the tool bar
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic02.png" alt="2" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b. State Table ID to 'TableID'
+
+с. Set number of columns Table ID to 'Columns'
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic03.png" alt="3" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d. Observe table and a columns within template block
+
+e. Input columns names into appropriate columns
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic04.png" alt="4" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f. Table with stated columns will be added to the template
+</code></pre></div></div>
+
+<p><strong>7. If you need to add an input field to your template, follow next few steps:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a. Click on 'Variable' icon in the tool bar
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic5.png" alt="5" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b. Input Variable (field) name to 'Variable Name' field
+
+c. Click on 'Submit' button
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic6.png" alt="6" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d. Observe as newly added variable appears within the template
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic7.png" alt="7" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f. Table with stated columns will be added to the template
+</code></pre></div></div>
+
+<p><strong>8. If you need to add a image to your template, follow next few steps:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a. Click on 'Image' icon in the tool bar
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic8.png" alt="8" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b. Observe 'Select image' popup window
+
+с. Click on '+' button and attach needed image
+
+d. Click on 'Submit' button
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic09.png" alt="9" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>e. Observe image within template block
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic10.png" alt="10" /></p>
+
+<p><strong>9. If you need to use custom fonts within your template, follow next few steps:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a. Click on 'Insert font' icon in the tool bar
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic11.png" alt="11" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>b. Observe 'Select font' popup window
+
+с. Click on '+' button and attach needed image
+
+d. Click on 'Submit' button
+</code></pre></div></div>
+
+<p><img src="img/constructor_template_pic12.png" alt="12" /></p>
+
+<p>e. Click on ‘Fonts’ icon and select newly uploaded font from a dropdown menu</p>
+
+<p><img src="img/constructor_template_pic13 (1).png" alt="13" /></p>
+
+<p>f. Type need text using selected font</p>
+
+<p><strong>10. Click on ‘Submit’ button, when all the changes to the template are finished</strong></p>
+
+<p><img src="img/constructor_template_pic14.png" alt="14" /></p>
+
+<p><strong>11. Observe block with variable and table name(s)</strong></p>
+
+<p><img src="img/constructor_template_pic15.png" alt="15" /></p>
+
+<p><strong>11. Complete Variable Name fields (f.e. “Client ID”)</strong></p>
+
+<p><strong>12. Complete Table Name fields (f.e. “Financial Table”)</strong></p>
+
+<p><strong>13. If your template has more than one table, complete Table Name field for each table</strong></p>
+
+<p><strong>14. Check all the fields are correctly completed and click on Submit to submit new template</strong></p>
+
+<p><strong>15. Observe newly added template in documents list in New Document menu</strong></p>
+
+<p><img src="img/constructor_template_pic16.png" alt="16" /></p>
+
+          </div>
+
+
+
+
+<div class="blog-post">
+            <h1 class="blog-post-title"><a href="/generic-doc-create" id="">How to Create Generic Document</a></h1>
+            <h1 id="step-by-step-guide">Step-by-step guide</h1>
+
+<p><strong>1. Go to the Issuer site of Cronica.io and authorize;</strong></p>
+
+<p><strong>2. Click on ‘New Document’ button on the left side menu ;</strong></p>
+
+<p><strong>3. Observe list of available templates;</strong></p>
+
+<p><strong>4. Click on ‘Generic Document’ template;</strong></p>
+
+<p><img src="img/create_generic_pic01.png" alt="1" /></p>
+
+<p><strong>5. Input the appropriate document holder name into ‘Document Name’ field;</strong></p>
+
+<p><strong>6. Input the appropriate document holder name into ‘Document Holder’ field;</strong></p>
+
+<p><strong>7. Input expiration date into’Expiration Date’field if needed;</strong></p>
+
+<p><strong>8. Upload a PDF document using ‘Attach File’ field;</strong></p>
+
+<p><strong>9. Click on appropriate document type (‘Private’, ‘Public’, ‘Limited’);</strong></p>
+
+<p><strong>10. If you select ‘Limited’select appropriate institution from the dropdown list;</strong></p>
+
+<p><img src="img/create_generic_pic02.png" alt="2" /></p>
+
+<p><strong>11. Click on ‘Submit’ button;</strong></p>
+
+<p><strong>12. Observe confirmation of document submission;</strong></p>
+
+<p><img src="img/create_generic_pic03.png" alt="3" /></p>
+
+          </div>
+
+
+
+
+<div class="blog-post">
+            <h1 class="blog-post-title"><a href="/create-html-based-template" id="">How To Create HTML based template</a></h1>
+            <h1 id="how-to-add-html-template-to-cronicaio">How to add HTML Template to Cronica.io</h1>
+
+<p>Step-by-step guide</p>
+
+<p><strong>1.   Create html document with any suitable for you html editor, adding images, styles and tables.</strong></p>
+
+<p><strong>2.  Put all used images into “../template/img” folder</strong></p>
+
+<p><img src="img/HTML1.jpg" alt="Generic template" /></p>
+
+<ol>
+  <li>Open .html document to make next changes with code:</li>
+</ol>
+
+<p><strong>Change file location for images to just file name:</strong>
+Before:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"./template/img/cronica.png"</span> <span class="na">alt=</span><span class="s">"Cronica"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>After:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"cronica.png"</span> <span class="na">alt=</span><span class="s">"Cronica"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>**Insert variables to any place of html within    &lt;p&gt;, <span>, &lt;div&gt; tags by adding  ###variable_name###:**</span></p>
+
+<p>Before:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"text-align: center;"</span><span class="nt">&gt;</span>Declaration of Mr.Smith<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p>After:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"text-align: center;"</span><span class="nt">&gt;</span>Declaration of ###name###<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+<p><strong>Insert “data-tablename” parameter with the table name to table tags:</strong></p>
+
+<p>Before:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">style=</span><span class="s">"height: 17px; margin-left: auto; margin-right: auto;"</span> <span class="na">width=</span><span class="s">"631"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>After:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">data-tablename=</span><span class="s">"new_table"</span> <span class="na">style=</span><span class="s">"height: 17px; margin-left: auto; margin-right: auto;"</span> <span class="na">width=</span><span class="s">"631"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Add name for the columns within &lt;td&gt; tags:</strong></p>
+
+<p>Before:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="err">&lt;</span><span class="na">td</span> <span class="na">style=</span><span class="s">"width: 88px;"</span><span class="nt">&gt;&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">style=</span><span class="s">"width: 88px;"</span><span class="nt">&gt;&lt;/td&gt;</span>
+</code></pre></div></div>
+
+<p>After:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;td</span> <span class="na">style=</span><span class="s">"width: 88px;"</span><span class="nt">&gt;</span>id<span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;td</span> <span class="na">style=</span><span class="s">"width: 88px;"</span><span class="nt">&gt;</span>Sum<span class="nt">&lt;/td&gt;</span>
+</code></pre></div></div>
+
+<p><strong>4. Save .html file</strong></p>
+
+<p><strong>5. Compress .html file and “template” folder to single .zip archive</strong></p>
+
+<p><strong>6. Go to the Issuer site of Cronica.io and authorize as an Editor or Administrator</strong></p>
+
+<p><strong>7. Go to the New Template</strong></p>
+
+<p><strong>8. Input Template Name</strong></p>
+
+<p><strong>9. Click on HTML button</strong></p>
+
+<p><img src="img/HTML2.jpg" alt="2" /></p>
+
+<p><strong>10. Click on ‘Submit’ button</strong></p>
+
+<p><strong>11. Observe block with variable and table name(s)</strong></p>
+
+<p><img src="img/HTML3.png" alt="3" /></p>
+
+<p><strong>11. Complete Variable Name fields (f.e. “Client ID”)</strong></p>
+
+<p><strong>12. Complete Table Name fields (f.e. “Financial Table”)</strong></p>
+
+<p><strong>13. If your template has more than one table, complete Table Name field for each table</strong></p>
+
+<p><strong>14. Check all the fields are correctly completed and click on Submit to submit new template</strong></p>
+
+<p><strong>15. Observe newly added template in documents list in New Document menu</strong></p>
+
+<p><img src="img/HTML4.png" alt="3" /></p>
+
+          </div>
+
+
+
+
+<div class="blog-post">
+            <h1 class="blog-post-title"><a href="/create-quorum-network" id="">How to create Quorum Network and Add New Node</a></h1>
+            <h1 id="minimal-requirements-for-server-hardware-and-software">Minimal requirements for server hardware and software:</h1>
+
+<p><strong>Instance type: t3.micro, t2/t3 unlimited
+Storage: EBS volume 200 GB (SSD, GP2)</strong></p>
+
+<h2 id="how-to-configure-first-node">How to configure first node:</h2>
+
+<ol>
+  <li>Connect to the virtual machine based on <em>Ubuntu 16.04</em> with preinstalled:</li>
+</ol>
+
+<p><strong>sudo apt-get update -y</strong></p>
+
+<p><strong>sudo apt-get install docker.io docker-compose -y;</strong></p>
+
+<p><strong>sleep 2; sudo usermod -a -G docker ubuntu</strong></p>
+
+<p><strong>docker info</strong></p>
+
+<p><strong>docker-compose –version</strong></p>
+
+<p>1.1 <strong>git clone</strong> <a href="https://github.com/cronicaio/quorum-maker.git"><strong>https://github.com/cronicaio/quorum-maker.git</strong></a></p>
+
+<p>1.2 Enter directory of Quorum-Maker service - <strong>$ cd quorum-maker</strong></p>
+
+<p>1.3 Run setup script - <strong>$ ./setup.sh</strong></p>
+
+<p>2.Set the network parameters, as described below:</p>
+
+<p>2.1 <em>Select  "Create new network"</em> - enter " <strong>1</strong>" and press [<strong>Enter</strong>]</p>
+
+<p>2.2 <em>Input the name of the node</em> - Type   <strong>node_name</strong> and press [<strong>Enter</strong>]</p>
+
+<p>2.3 <em>Input IP address of this node</em> - Type <strong>first_node_ip_address</strong> (IP address of the current server) and press [Enter]</p>
+
+<p>2.4 <em>Input RPC Port of this node</em> - Type <strong>rpc_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22000]</p>
+
+<p>2.5 <em>Input Network Listening Port</em> - Type <strong>network_listening_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22001]</p>
+
+<p>2.6 <em>Input Constellation Port</em> - Type <strong>constellation_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22002]</p>
+
+<p>2.7 <em>Input Raft Port</em> - Type <strong>raft_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22003]</p>
+
+<p>2.8 <em>Input Node Manager Port</em> - Type <strong>node_manager_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22004]: "22004"</p>
+
+<p>2.9 <em>Input WS Port of current node -</em> <strong>Type WS_node_port</strong> or press [<strong>Enter</strong>] for default [Default:22005]: "22005"</p>
+
+<p><img src="img/Optional1.png" alt="Node1" /></p>
+
+<p><em>Node configuration screen example for configuration of first node</em></p>
+
+<ol>
+  <li>
+    <p>Observe success message</p>
+  </li>
+  <li>
+    <p>Your node started at <strong>http://first_node_server_ip_address:22004</strong></p>
+  </li>
+</ol>
+
+<p><em>if you'll need to restart node after stop, follow next steps:</em></p>
+
+<ol>
+  <li><em>Go to node service directory on your server</em> - <strong>$</strong>  <strong>cd ./{node_name}</strong></li>
+  <li><em>Run node execution script -</em> <strong>$ .</strong>** /start.sh**</li>
+</ol>
+
+<h2 id="how-to-configure-second-and-other-nodes">How to configure second and other nodes:</h2>
+
+<ol>
+  <li>Connect to the virtual machine based on <em>Ubuntu 16.04</em> with preinstalled:</li>
+</ol>
+
+<p>1.1 <strong>git clone</strong> <a href="https://github.com/cronicaio/quorum-maker.git"><strong>https://github.com/cronicaio/quorum-maker.git</strong></a></p>
+
+<p>1.2 Enter directory of Quorum-Maker service - <strong>$ cd quorum-maker</strong></p>
+
+<p>1.3 Run setup script - <strong>$ ./setup.sh</strong></p>
+
+<ol>
+  <li>Set the network parameters, as described below:</li>
+</ol>
+
+<p><em>2.1 Select  "Join network"</em> - enter " <strong>2</strong>" and press [<strong>Enter</strong>]</p>
+
+<p><em>2.2 Input the name of the node</em> - Type   <strong>node_name</strong> and press [<strong>Enter</strong>]</p>
+
+<p><em>2.3 Input IP Address of first node</em> - Type <strong>first_node_ip_address</strong> (IP address of the existing) and press [Enter]</p>
+
+<p><em>2.4 Input Node Manager Port of first node</em> - Type <strong>node_manager_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22004]</p>
+
+<p><em>2.5 Input IP Address of current node</em> - Type <strong>current_node_ip_address</strong> (IP address of the existing) and press [Enter]</p>
+
+<p><em>2.6 Input Network Listening Port of current node</em> - Type <strong>network_listening_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22001]</p>
+
+<p><em>2.7 Input Constellation Port of current node</em> - Type <strong>network_listening_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22002]</p>
+
+<p><em>2.8 Input Raft Port of current node</em> - Type <strong>raft_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22003]</p>
+
+<p><em>2.9 Input Node Manager Port</em> of current node - Type <strong>node_manager_listening_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22004]: "22004"</p>
+
+<p><em>2.10 Input WS Port of current node -</em> <strong>Type WS_node_port</strong> or press [<strong>Enter</strong>] for   default [Default:22005]: "22005"</p>
+
+<p><img src="img/Optional2.png" alt="Node2" /></p>
+
+<p><em>Node configuration screen example for joining network node</em></p>
+
+<ol>
+  <li>Go to <strong>http://first_node_server _ip_address</strong> : <strong>22004</strong> and accept second node via web interface.</li>
+</ol>
+
+<p><img src="img/QuorumRequest1.png" alt="Request1" /></p>
+
+<p><img src="img/QuorumRequest2.png" alt="Request2" /></p>
+
+<ol>
+  <li>
+    <p>Observe notification of successful connection in the node manager web interface of first node</p>
+  </li>
+  <li>
+    <p>Your node started at <strong>http://first_node_server_ip_address:22004</strong></p>
+  </li>
+</ol>
+
+<p><em>if you'll need to restart node after stop, follow next steps:</em></p>
+
+<ol>
+  <li><em>Go to node service directory on your server</em> - <strong>$</strong>  <strong>cd ./{node_name}</strong></li>
+  <li><em>Run node execution script -</em> <strong>$ .</strong>** /start.sh**</li>
+</ol>
+
+<p><strong>Accounts</strong>** :**</p>
+
+<ol>
+  <li>Go to the site 1 node <strong>http://first_node_server_ip_address:22004</strong></li>
+</ol>
+
+<p>1.1 Press button "Accounts"
+<img src="img/QuorumAccount.png" alt="QuorumAccount" /></p>
+
+<p>1.2 To create a new account you need to come up with a password and click the "Submit" button
+<img src="img/CreateAccount.png" alt="CreateAccount" /></p>
+
+<p>1.3 After that the new account appears in the list with the generated key and your password
+<img src="img/Infor.Account.png" alt="Infor.Account" /></p>
+
+<p>1.4 After creating an account, you should refill it</p>
+
+<ol>
+  <li>Connect to our 1 node:</li>
+</ol>
+
+<p><strong>$ ssh root@first_node_server_ip_address</strong></p>
+
+<ol>
+  <li>Download geth client (binary file):
+<strong>cd</strong></li>
+</ol>
+
+<p><strong>mkdir geth_binary</strong></p>
+
+<p><strong>cd geth_binary</strong></p>
+
+<p><strong>wget</strong> <a href="https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.15-89451f7c.tar.gz"><strong>https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.15-89451f7c.tar.gz</strong></a></p>
+
+<p><strong>tar xvzf geth-linux-amd64-1.8.15-89451f7c.tar.gz</strong></p>
+
+<p><strong>cd geth-linux-amd64-1.8.15-89451f7c</strong></p>
+
+<p><strong>cp ./geth ~/geth</strong></p>
+
+<p><strong>cd</strong></p>
+
+<p><strong>rm -r geth_binary</strong></p>
+
+<p>3.1 Attach to the node using command:
+<img src="img/Gethattach.png" alt="Gethattach" /></p>
+
+<p><strong>~/geth</strong>  <strong>attach ~/quorum-maker/cronica/node/qdata/geth.ipc</strong></p>
+
+<p>Where <strong>~/quorum-maker/cronica/node/qdata/geth.ipc</strong> - path to geth.ipc interface</p>
+
+<p>3.1.1 Now you should unlock the main account for the transfer to the one we the created accounts
+<img src="img/Unlock.png" alt="Unlock" /></p>
+
+<p><strong>$ web3.personal.unlockAccount(eth.coinbase)</strong></p>
+
+<p>3.1.2 The message about successful unlock should be displayed</p>
+
+<p>3.2 Then you can transfer funds to our created account, Green Vision key transaction</p>
+
+<p><img src="img/Transfer.png" alt="Transfer" /></p>
+
+<p><strong>$ eth.sendTransaction({from:eth.coinbase, to:"0xb8fa57faa98a8796b4b527214bdafd23b8426470", value:10000})</strong></p>
+
+<p>3.3 Detailed information about our transaction should be displayed</p>
+
+<p><img src="img/Details.png" alt="Details" /></p>
+
+<p><strong>$  eth.getTransactionReceipt("enter the transaction key")</strong></p>
+
+          </div>
+
+
+
+
+<div class="blog-post">
+            <h1 class="blog-post-title"><a href="/search-doc-on-issuer-site" id="">How to Search for a Document on Issuer Site</a></h1>
+            <h1 id="step-by-step-guide">Step-by-step guide</h1>
+
+<p><strong>1. Go to the Issuer site of Cronica.io and authorize;</strong></p>
+
+<p><strong>2. Click on ‘Search document’ button on the left side menu;</strong></p>
+
+<p><strong>3. Observe document search screen;</strong></p>
+
+<p><img src="img/issure1.png" alt="1" /></p>
+
+<p><strong>4. Insert ID in the “Document ID”</strong></p>
+
+<p><img src="img/issure2.png" alt="2" /></p>
+
+<p><strong>5. At the bottom of our page we get the search result</strong></p>
+
+<p><img src="img/issure3.png" alt="3" /></p>
+
+<p><strong>6. By clicking on the document ID, the pdf document is displayed.</strong></p>
+
+<p><img src="img/issure4.png" alt="4" /></p>
+
+          </div>
+
+
+
+
+		</section>
+
+		<div class="clear"></div>
+		<footer class="page-footer">
+			<p class="small-text">Support: <a href="mailto:info@emmet.io">info@emmet.io</a><br>Created with <a href="https://github.com/bevry/docpad">DocPad</a> and <a href="http://gulpjs.com">Gulp.js</a><br>Minimal theme by <a href="https://github.com/orderedlist/minimal">orderedlist</a></p>
+			<p class="small-text"><a href="https://github.com/emmetio/emmet-docs/tree/master/src/documents/index.html.md">View page source on GitHub</a></p>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>

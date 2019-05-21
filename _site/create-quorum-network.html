@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cronica Documentation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://localhost:4000/assets/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="wrapper">
+
+<header class="page-header">
+            <h1 class="site-title">
+
+                Cronica Documentation
+
+            </h1>
+            <p class="back-to-main"><a href="http://cronica.io">Back to main website</a></p>
+
+            <nav>
+
+
+<ul class="nav">
+
+    <li class="nav__item">
+
+      <a href="#001">Cronica Infrastructure with vpn</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#002">How to add A JasperSoft Template</a>
+
+</ul>
+
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#003">How to Create a Structured Document</a>
+
+
+</ul>
+
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#004">How to Create a Template with Template Constructor</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#005">How to Create Generic Document</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#006">How To Create HTML based template</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#007">How to create Quorum Network and Add New Node</a>
+
+
+</ul>
+
+<ul class="nav">
+
+		<li class="nav__item">
+
+				<a href="#008">How to Search for a Document on Issuer Site</a>
+
+
+</ul>
+			</nav>
+
+        </header>
+
+
+		<section class="page-content">
+			<div class="bsa-cpc"></div>
+
+	<h1 id="minimal-requirements-for-server-hardware-and-software">Minimal requirements for server hardware and software:</h1>
+
+<p><strong>Instance type: t3.micro, t2/t3 unlimited
+Storage: EBS volume 200 GB (SSD, GP2)</strong></p>
+
+<h2 id="how-to-configure-first-node">How to configure first node:</h2>
+
+<ol>
+  <li>Connect to the virtual machine based on <em>Ubuntu 16.04</em> with preinstalled:</li>
+</ol>
+
+<p><strong>sudo apt-get update -y</strong></p>
+
+<p><strong>sudo apt-get install docker.io docker-compose -y;</strong></p>
+
+<p><strong>sleep 2; sudo usermod -a -G docker ubuntu</strong></p>
+
+<p><strong>docker info</strong></p>
+
+<p><strong>docker-compose –version</strong></p>
+
+<p>1.1 <strong>git clone</strong> <a href="https://github.com/cronicaio/quorum-maker.git"><strong>https://github.com/cronicaio/quorum-maker.git</strong></a></p>
+
+<p>1.2 Enter directory of Quorum-Maker service - <strong>$ cd quorum-maker</strong></p>
+
+<p>1.3 Run setup script - <strong>$ ./setup.sh</strong></p>
+
+<p>2.Set the network parameters, as described below:</p>
+
+<p>2.1 <em>Select  "Create new network"</em> - enter " <strong>1</strong>" and press [<strong>Enter</strong>]</p>
+
+<p>2.2 <em>Input the name of the node</em> - Type   <strong>node_name</strong> and press [<strong>Enter</strong>]</p>
+
+<p>2.3 <em>Input IP address of this node</em> - Type <strong>first_node_ip_address</strong> (IP address of the current server) and press [Enter]</p>
+
+<p>2.4 <em>Input RPC Port of this node</em> - Type <strong>rpc_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22000]</p>
+
+<p>2.5 <em>Input Network Listening Port</em> - Type <strong>network_listening_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22001]</p>
+
+<p>2.6 <em>Input Constellation Port</em> - Type <strong>constellation_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22002]</p>
+
+<p>2.7 <em>Input Raft Port</em> - Type <strong>raft_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22003]</p>
+
+<p>2.8 <em>Input Node Manager Port</em> - Type <strong>node_manager_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22004]: "22004"</p>
+
+<p>2.9 <em>Input WS Port of current node -</em> <strong>Type WS_node_port</strong> or press [<strong>Enter</strong>] for default [Default:22005]: "22005"</p>
+
+<p><img src="img/Optional1.png" alt="Node1" /></p>
+
+<p><em>Node configuration screen example for configuration of first node</em></p>
+
+<ol>
+  <li>
+    <p>Observe success message</p>
+  </li>
+  <li>
+    <p>Your node started at <strong>http://first_node_server_ip_address:22004</strong></p>
+  </li>
+</ol>
+
+<p><em>if you'll need to restart node after stop, follow next steps:</em></p>
+
+<ol>
+  <li><em>Go to node service directory on your server</em> - <strong>$</strong>  <strong>cd ./{node_name}</strong></li>
+  <li><em>Run node execution script -</em> <strong>$ .</strong>** /start.sh**</li>
+</ol>
+
+<h2 id="how-to-configure-second-and-other-nodes">How to configure second and other nodes:</h2>
+
+<ol>
+  <li>Connect to the virtual machine based on <em>Ubuntu 16.04</em> with preinstalled:</li>
+</ol>
+
+<p>1.1 <strong>git clone</strong> <a href="https://github.com/cronicaio/quorum-maker.git"><strong>https://github.com/cronicaio/quorum-maker.git</strong></a></p>
+
+<p>1.2 Enter directory of Quorum-Maker service - <strong>$ cd quorum-maker</strong></p>
+
+<p>1.3 Run setup script - <strong>$ ./setup.sh</strong></p>
+
+<ol>
+  <li>Set the network parameters, as described below:</li>
+</ol>
+
+<p><em>2.1 Select  "Join network"</em> - enter " <strong>2</strong>" and press [<strong>Enter</strong>]</p>
+
+<p><em>2.2 Input the name of the node</em> - Type   <strong>node_name</strong> and press [<strong>Enter</strong>]</p>
+
+<p><em>2.3 Input IP Address of first node</em> - Type <strong>first_node_ip_address</strong> (IP address of the existing) and press [Enter]</p>
+
+<p><em>2.4 Input Node Manager Port of first node</em> - Type <strong>node_manager_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22004]</p>
+
+<p><em>2.5 Input IP Address of current node</em> - Type <strong>current_node_ip_address</strong> (IP address of the existing) and press [Enter]</p>
+
+<p><em>2.6 Input Network Listening Port of current node</em> - Type <strong>network_listening_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22001]</p>
+
+<p><em>2.7 Input Constellation Port of current node</em> - Type <strong>network_listening_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22002]</p>
+
+<p><em>2.8 Input Raft Port of current node</em> - Type <strong>raft_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22003]</p>
+
+<p><em>2.9 Input Node Manager Port</em> of current node - Type <strong>node_manager_listening_port_number</strong> or press [<strong>Enter</strong>] for default [Default:22004]: "22004"</p>
+
+<p><em>2.10 Input WS Port of current node -</em> <strong>Type WS_node_port</strong> or press [<strong>Enter</strong>] for   default [Default:22005]: "22005"</p>
+
+<p><img src="img/Optional2.png" alt="Node2" /></p>
+
+<p><em>Node configuration screen example for joining network node</em></p>
+
+<ol>
+  <li>Go to <strong>http://first_node_server _ip_address</strong> : <strong>22004</strong> and accept second node via web interface.</li>
+</ol>
+
+<p><img src="img/QuorumRequest1.png" alt="Request1" /></p>
+
+<p><img src="img/QuorumRequest2.png" alt="Request2" /></p>
+
+<ol>
+  <li>
+    <p>Observe notification of successful connection in the node manager web interface of first node</p>
+  </li>
+  <li>
+    <p>Your node started at <strong>http://first_node_server_ip_address:22004</strong></p>
+  </li>
+</ol>
+
+<p><em>if you'll need to restart node after stop, follow next steps:</em></p>
+
+<ol>
+  <li><em>Go to node service directory on your server</em> - <strong>$</strong>  <strong>cd ./{node_name}</strong></li>
+  <li><em>Run node execution script -</em> <strong>$ .</strong>** /start.sh**</li>
+</ol>
+
+<p><strong>Accounts</strong>** :**</p>
+
+<ol>
+  <li>Go to the site 1 node <strong>http://first_node_server_ip_address:22004</strong></li>
+</ol>
+
+<p>1.1 Press button "Accounts"
+<img src="img/QuorumAccount.png" alt="QuorumAccount" /></p>
+
+<p>1.2 To create a new account you need to come up with a password and click the "Submit" button
+<img src="img/CreateAccount.png" alt="CreateAccount" /></p>
+
+<p>1.3 After that the new account appears in the list with the generated key and your password
+<img src="img/Infor.Account.png" alt="Infor.Account" /></p>
+
+<p>1.4 After creating an account, you should refill it</p>
+
+<ol>
+  <li>Connect to our 1 node:</li>
+</ol>
+
+<p><strong>$ ssh root@first_node_server_ip_address</strong></p>
+
+<ol>
+  <li>Download geth client (binary file):
+<strong>cd</strong></li>
+</ol>
+
+<p><strong>mkdir geth_binary</strong></p>
+
+<p><strong>cd geth_binary</strong></p>
+
+<p><strong>wget</strong> <a href="https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.15-89451f7c.tar.gz"><strong>https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.15-89451f7c.tar.gz</strong></a></p>
+
+<p><strong>tar xvzf geth-linux-amd64-1.8.15-89451f7c.tar.gz</strong></p>
+
+<p><strong>cd geth-linux-amd64-1.8.15-89451f7c</strong></p>
+
+<p><strong>cp ./geth ~/geth</strong></p>
+
+<p><strong>cd</strong></p>
+
+<p><strong>rm -r geth_binary</strong></p>
+
+<p>3.1 Attach to the node using command:
+<img src="img/Gethattach.png" alt="Gethattach" /></p>
+
+<p><strong>~/geth</strong>  <strong>attach ~/quorum-maker/cronica/node/qdata/geth.ipc</strong></p>
+
+<p>Where <strong>~/quorum-maker/cronica/node/qdata/geth.ipc</strong> - path to geth.ipc interface</p>
+
+<p>3.1.1 Now you should unlock the main account for the transfer to the one we the created accounts
+<img src="img/Unlock.png" alt="Unlock" /></p>
+
+<p><strong>$ web3.personal.unlockAccount(eth.coinbase)</strong></p>
+
+<p>3.1.2 The message about successful unlock should be displayed</p>
+
+<p>3.2 Then you can transfer funds to our created account, Green Vision key transaction</p>
+
+<p><img src="img/Transfer.png" alt="Transfer" /></p>
+
+<p><strong>$ eth.sendTransaction({from:eth.coinbase, to:"0xb8fa57faa98a8796b4b527214bdafd23b8426470", value:10000})</strong></p>
+
+<p>3.3 Detailed information about our transaction should be displayed</p>
+
+<p><img src="img/Details.png" alt="Details" /></p>
+
+<p><strong>$  eth.getTransactionReceipt("enter the transaction key")</strong></p>
+
+
+		</section>
+
+		<div class="clear"></div>
+		<footer class="page-footer">
+			<p class="small-text">Support: <a href="mailto:info@emmet.io">info@emmet.io</a><br>Created with <a href="https://github.com/bevry/docpad">DocPad</a> and <a href="http://gulpjs.com">Gulp.js</a><br>Minimal theme by <a href="https://github.com/orderedlist/minimal">orderedlist</a></p>
+			<p class="small-text"><a href="https://github.com/emmetio/emmet-docs/tree/master/src/documents/index.html.md">View page source on GitHub</a></p>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>

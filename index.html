@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{% for post in site.categories.jekyll %}
+
+
+<div class="blog-post">
+            <h1 class="blog-post-title"><a href="{{ post.url|prepend: site.baseurl }}" id="{{ post.idN }}">{{ post.title }}</a></h1>
+            {{ post.content }}
+          </div>
+
+{% endfor %}
